@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Login</title>
+	<link rel="stylesheet" href="home-style.css" type="text/css">
+</head>
+<body>
+	<header>
+		<div class="main">
+			<div class="logo">
+				<img src="rvcelogo.gif">
+			</div>
+			<ul>
+				<li><a href="home.html">HOME</a></li>
+			</ul>
+		</div>
+
+		<form class="form-signin" action="http://localhost/studentlogin.php" method="post">
+      
+      		<h1 ><font color="white">Student log in</font></h1>
+      		<label for="inputEmail" class="sr-only"></label>
+          <br>
+      		<input type="text" name='usn' id="inputEmail" class="form-control" placeholder="USN" required autofocus>
+          <br>
+      		<label for="inputPassword" class="sr-only"></label>
+          <br>
+      		<input type="password" id="inputPassword" name='password' class="form-control" placeholder="Password" required>
+   			<br>
+   	  		<br>
+      		<div class="checkbox mb-3">
+        		<label>
+          			<input type="checkbox" value="remember-me" ><font color="white"> Remember me
+        		</label>
+        		<br>
+        		<br>
+      		</div>
+      		<br>
+      		<button class="btn btn-primary" type="submit"><font color="black"><font size="4px">Log in</button>
+      
+    	</form>
+	</header>
+</body>
+</html>
