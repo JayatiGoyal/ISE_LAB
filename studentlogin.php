@@ -97,7 +97,8 @@
 		}
 		else{
 			echo '<script language="javascript">';
-			echo 'window.location.href="http://localhost/lab/studentafterlogin.html"';
+			echo 'alert("There is no lab being conducted for your batch right now!");
+				window.location.href="http://localhost/lab/studentlogin.html"';
 			echo '</script>';
 		}
 	}
