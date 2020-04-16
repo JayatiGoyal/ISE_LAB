@@ -11,7 +11,7 @@ class LikeButton extends React.Component {
 
   render() {
     if (this.state.liked) {
-    window.location.href="http://localhost/lab/adminlogin1.php";
+    window.location.href="http://localhost/lab/adminlogingoogle.php";
       //return 'You liked this.';
     }
 
