@@ -59,14 +59,14 @@
 			$q = "SELECT * FROM attend WHERE USN='$name' AND DATE=curdate() ";
 			$result1=mysqli_query($con,$q);
 			$num=mysqli_num_rows($result1);
-
+			$i_info2=mysqli_fetch_row($result);
+			
 			if($num==0){
 
-				$i_info2=mysqli_fetch_row($result);
 				$allotted_time=extract_time($i_info2[1]);
 				$timedif= ($time-strtotime($allotted_time));
 				//echo $timedif/60;
-				if(($timedif/60)<90){
+				if(($timedif/60)<15){
 
 					$q="INSERT INTO attend(DATE,USN,SEM,SUBJECT,BATCH) VALUES (curdate(),'$name',$i_info[3],'$i_info2[4]','$batch')";
 					$result=mysqli_query($con,$q);
@@ -75,7 +75,7 @@
 
 					echo '<script language="javascript">';
 					echo 'alert("Attendance taken!!");
-						window.location.href="http://localhost/lab/studentafterlogin.html"';
+						window.location.href="http://localhost/lab/studentafterlogin.html?usn='.$name.'&batch='.$batch.'&sem='.$i_info[3].'&lab='.$lab.'&subject='.$i_info2[4].'"';
 					echo '</script>';
 					mysqli_close($con);
 
@@ -90,7 +90,7 @@
 			}
 			else{
 				echo '<script language="javascript">';
-				echo 'window.location.href="http://localhost/lab/studentafterlogin.html"';
+				echo 'window.location.href="http://localhost/lab/studentafterlogin.html?usn='.$name.'&batch='.$batch.'&sem='.$i_info[3].'&lab='.$lab.'&subject='.$i_info2[4].'"';
 				echo '</script>';
 			}
 
