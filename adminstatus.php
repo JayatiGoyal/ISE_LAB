@@ -125,7 +125,7 @@ while( $row = mysqli_fetch_array($res1)){
 
 while($row_d=mysqli_fetch_array($res2)){
 	$date=$row_d['Date'];
-//	$count_s=0;
+	$count_s=0;
 	echo "<tr>";
 	echo "<td>" . substr($row_d['Date'],0,10) . "</td>";
 	foreach($new_array as $usn){
@@ -135,16 +135,16 @@ while($row_d=mysqli_fetch_array($res2)){
 		if(mysqli_num_rows($res3)==0)
 			echo "<td>0</td>";
 		else if(mysqli_num_rows($res3)>0){
-			//$count_s++;
+			$count_s++;
 			echo "<td>1</td>";
 		}
 	
 	}
 	
-	$q4="select COUNT(usn) as count FROM attend WHERE Date='$date' AND usn='$usn'";
+	/*$q4="select COUNT(usn) as count FROM attend WHERE Date='$date' AND usn='$usn'";
 	$res4=mysqli_query($con,$q4);
-	$data=mysqli_fetch_assoc($res4);
-	echo "<td>" .$data['count']. "</td>";
+	$data=mysqli_fetch_assoc($res4);*/
+	echo "<td>" .$count_s. "</td>";
 	echo "</tr>";
 }
 echo "
