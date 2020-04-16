@@ -68,7 +68,7 @@
 				//echo $timedif/60;
 				if(($timedif/60)<90){
 
-					$q="INSERT INTO attend(DATE,USN,SEM,SUBJECT) VALUES (curdate(),'$name',$i_info[3],'$i_info2[4]')";
+					$q="INSERT INTO attend(DATE,USN,SEM,SUBJECT,BATCH) VALUES (curdate(),'$name',$i_info[3],'$i_info2[4]','$batch')";
 					$result=mysqli_query($con,$q);
 					if(!$result)
 						echo "Error";
