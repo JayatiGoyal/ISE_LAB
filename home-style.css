@@ -146,3 +146,18 @@ ul li.active a{
   transform: translate(-50%,-50%);
   font-size: 20px;
 }
+
+table{ 
+padding-top:150px;
+padding-left:10px;
+color:white;
+}
+
+h2{
+padding:70px;
+}
+
+th, td {
+  border: 1px solid white;
+  padding:5px;
+}
